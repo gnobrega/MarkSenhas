@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:id="@+id/body">
+
+    <!-- Instruçoes -->
+    <TextView
+        android:id="@+id/txtDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="40dp"
+        android:layout_marginBottom="30dp"
+        android:textColor="#929292" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Tela - Lista de botões de serviços -->
+        <LinearLayout
+            android:id="@+id/containerServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+        </LinearLayout>
+
+        <!-- Tela - Tipos de atendimento -->
+        <LinearLayout
+            android:id="@+id/containerTypes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            >
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
