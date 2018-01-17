@@ -1,5 +1,9 @@
 package br.com.marktv.marksenhas;
 
+import android.os.Environment;
+
+import java.io.File;
+
 /**
  * Created by Gustavo on 02/09/2016.
  */
@@ -7,6 +11,12 @@ public class App {
 
     //Tag do log
     public static String LOG_TAG = "[MARKSENHAS_LOG]";
+
+    //Sdcard
+    public static File sdcard = Environment.getExternalStorageDirectory();
+
+    //Config Ini
+    public static String pathFileIni = sdcard.getAbsolutePath() + "/wikipix.ini";
 
     //Atividade principal
     public static MainActivity MAIN_ACTIVITY = null;
@@ -37,4 +47,6 @@ public class App {
     public static String MSG_DESC_SERVICE = "Selecione o serviço";
     public static String MSG_DESC_TYPE = "Selecione tipo de atendimento";
 
+    //Permissões
+    public static int PERMISSION_READ_EXTERNAL_STORAGE = 1;
 }

@@ -1,8 +1,12 @@
 package br.com.marktv.marksenhas;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
@@ -43,8 +47,14 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        //Carrega toda a estrutura
-        initialize();
+        //Carrega as permissões
+        if ( Build.VERSION.SDK_INT >= 23 && !hasPermissions() ) {
+            requestPermissions();
+        } else {
+
+            //Carrega toda a estrutura
+            initialize();
+        }
     }
 
     /**
@@ -52,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
      */
     protected void initialize() {
 
-        //Limpa threads antigas
-
+        //Recupera a url do servidor
+        App.URL_SERVER = Util.getServerUrl();
 
         //Inicia a conexão com a impressora
         customPrinter = new CustomPrinter(this);
@@ -277,11 +287,56 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Verifica se possui as permissões necessárias
+     */
+    boolean hasPermissions() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            boolean hasPermission = checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+            if (hasPermission) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Carrega as permissões do aplicativo
+     */
+    void requestPermissions() {
+
+        String[] permissions;
+        permissions = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
+
+        //Solicita a permissao
+        ActivityCompat.requestPermissions(MainActivity.this, permissions, App.PERMISSION_READ_EXTERNAL_STORAGE);
+    }
+
     @Override
     public void onDestroy() {
         if( threadPrinter != null && threadPrinter.isAlive() ) {
             threadPrinter.interrupt();
         }
         super.onDestroy();
+    }
+
+    /**
+     * Resposta do pedido de permissão
+     */
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        boolean allPermissions = true;
+        for( int grant : grantResults ) {
+            if( grant != PackageManager.PERMISSION_GRANTED ) {
+                allPermissions = false;
+            }
+        }
+        if( !allPermissions ) {
+            Util.log("O aplicativo não recebeu as permissões necessárias para executar a playlist");
+        } else {
+
+            //Carrega toda a estrutura
+            initialize();
+        }
     }
 }

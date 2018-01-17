@@ -8,6 +8,8 @@ import android.text.format.Time;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.ini4j.Ini;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -289,5 +291,38 @@ public class Util {
                 Util.toast(msg);
             }
         });
+    }
+
+    /**
+     * Carrega os dados de configurações
+     */
+    public static Ini.Section loadConfig(String strFile, String section) {
+        File configFile = new File(strFile);
+        if( configFile.exists() ) {
+            try {
+                Ini configIni = null;
+                configIni = new Ini(configFile);
+                Ini.Section ftpConfig = configIni.get(section);
+                return ftpConfig;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Util.log("Arquivo INI não encontrado ("+strFile+")");
+        }
+        return null;
+    }
+
+    /**
+     * Recupera a url do servidor
+     */
+    public static String getServerUrl() {
+        Ini.Section configIni = Util.loadConfig(App.pathFileIni, "queue");
+        if (configIni != null) {
+            return configIni.get("url");
+        } else {
+            Util.toast("Não foi possível carregar o arquivo INI");
+        }
+        return null;
     }
 }
