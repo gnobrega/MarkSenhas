@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:wheel="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_margin="10dp"
+    android:background="@drawable/fundo"
     android:id="@+id/body">
 
     <!-- Instruçoes -->
@@ -11,12 +13,12 @@
         android:id="@+id/txtDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textAlignment="center"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="40dp"
-        android:layout_marginBottom="30dp"
-        android:textColor="#929292" />
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="300px"
+        android:gravity="center"
+        android:text="SISTEMA DE GESTÃO DE SENHAS"
+        android:textColor="#e2e2e2"
+        android:textSize="40dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,10 +30,8 @@
             android:id="@+id/containerServices"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-
-            >
-        </LinearLayout>
+            android:gravity="center"
+            android:orientation="vertical"></LinearLayout>
 
         <!-- Tela - Tipos de atendimento -->
         <LinearLayout
@@ -40,6 +40,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:visibility="invisible"
+            android:gravity="center"
             >
         </LinearLayout>
 

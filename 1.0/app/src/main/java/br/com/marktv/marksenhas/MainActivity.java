@@ -1,8 +1,11 @@
 package br.com.marktv.marksenhas;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,6 +24,9 @@ import org.json.JSONObject;
 import java.util.Map;
 import java.util.TreeMap;
 
+import static br.com.marktv.marksenhas.R.id.containerServices;
+import static br.com.marktv.marksenhas.Util.context;
+
 public class MainActivity extends AppCompatActivity {
 
     private Map<String, Button> buttonsServices;
@@ -33,19 +39,35 @@ public class MainActivity extends AppCompatActivity {
     public String currentPassword;
     public CustomPrinter customPrinter;
     public Thread threadPrinter = null;
+    public LinearLayout body;
+    public ProgressDialog progressDoalog;
+    TextView txtDesc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        App.MAIN_ACTIVITY = this;
+        body = (LinearLayout) findViewById(R.id.body);
+        txtDesc = (TextView) findViewById(R.id.txtDesc);
+
+        //Carrega o diálogo de espera
+        progressDoalog = new ProgressDialog(MainActivity.this);
+        progressDoalog.setMax(100);
+        progressDoalog.setMessage("Imprimindo...");
+        progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
         //Configurações iniciais
         dontSleep();
-        Util.context = getApplicationContext();
-        ((TextView) findViewById(R.id.txtDesc)).setText(App.MSG_DESC_SERVICE);
+        context = getApplicationContext();
+        txtDesc.setText(App.MSG_DESC_SERVICE);
+
         //Remove title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //Carrega os dados do servidor
+        App.URL_SERVER = Util.loadUrlServer();
 
         //Carrega as permissões
         if ( Build.VERSION.SDK_INT >= 23 && !hasPermissions() ) {
@@ -62,12 +84,16 @@ public class MainActivity extends AppCompatActivity {
      */
     protected void initialize() {
 
-        //Recupera a url do servidor
-        App.URL_SERVER = Util.getServerUrl();
+        //Fullscreen
+        Util.setFullscreen(body);
 
         //Inicia a conexão com a impressora
         customPrinter = new CustomPrinter(this);
         customPrinter.start();
+
+        //Formata o campo de texto
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/MuseoSans-100.otf");
+        txtDesc.setTypeface(typeface);
 
         //Cria os botões
         createButtonsServices();
@@ -98,8 +124,6 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject jsonResp = new JSONObject(json);
                         JSONArray jsonData = jsonResp.getJSONArray("data");
                         if (jsonData.length() > 0) {
-                            int btnHeight = 700 / jsonData.length();
-                            btnParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, btnHeight);
 
                             for (int i = 0; i < jsonData.length(); i++) {
                                 JSONObject service = jsonData.getJSONObject(i);
@@ -109,10 +133,9 @@ public class MainActivity extends AppCompatActivity {
 
                                 //Cria os botões
                                 Button button = new Button(getApplicationContext());
+                                formatButton(button, 1);
                                 button.setText(serviceName);
                                 button.setTag(serviceKey);
-                                button.setTextSize(30);
-                                button.setLayoutParams(btnParams);
                                 buttonsServices.put(serviceKey, button);
                                 containerServices.addView(button);
 
@@ -158,45 +181,41 @@ public class MainActivity extends AppCompatActivity {
     private void createButtonsTypes() {
         LinearLayout containerTypes = (LinearLayout) findViewById(R.id.containerTypes);
 
-        int btnHeight = 250;
-        btnParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, btnHeight);
-
         //Evento click
         View.OnClickListener eventClick = new View.OnClickListener() {
             public void onClick(View v) {
                 Button target = (Button) v;
                 currentType = target.getTag().toString();
                 currentTypeLabel = target.getText().toString();
+
+                //Solicita senha no servidor
+                progressDoalog.show();
                 printPassword();
             }
         };
 
         //Botão Atendimento Convencional
         Button button = new Button(getApplicationContext());
+        formatButton(button, 1);
         button.setText("Convencional");
         button.setTag("TYPE_DEFAULT");
-        button.setTextSize(30);
-        button.setLayoutParams(btnParams);
         button.setOnClickListener(eventClick);
         containerTypes.addView(button);
 
         //Botão Atendimento Prioritário
         Button buttonP = new Button(getApplicationContext());
+        formatButton(buttonP, 2);
         buttonP.setText("Prioritário");
         buttonP.setTag("TYPE_PRIORITY");
-        buttonP.setTextSize(30);
-        buttonP.setLayoutParams(btnParams);
         buttonP.setOnClickListener(eventClick);
         containerTypes.addView(buttonP);
 
         //Botão Voltar
         Button buttonV = new Button(getApplicationContext());
-        buttonV.setText("Voltar");
-        buttonV.setTextSize(30);
-        LinearLayout.LayoutParams btnParamsV = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, 100);
+        buttonV.setBackgroundResource(R.drawable.botao3);
+        LinearLayout.LayoutParams btnParamsV = new LinearLayout.LayoutParams(220, 120);
+        btnParamsV.setMargins(0, 130, 0, 0);
         buttonV.setLayoutParams(btnParamsV);
-        btnParamsV.setMargins(0, 100, 0, 20);
         buttonV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -204,6 +223,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         containerTypes.addView(buttonV);
+    }
+
+    /**
+     * Formata o botão
+     */
+    private void formatButton(Button button, int theme) {
+        final Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/MuseoSans-900.otf");
+        btnParams = new LinearLayout.LayoutParams(460, 120);
+        btnParams.setMargins(0, 20, 0, 0);
+        button.setTextSize(30);
+        button.setLayoutParams(btnParams);
+        button.setTypeface(typeface);
+        if( theme == 1 ) {
+            button.setBackgroundResource(R.drawable.botao);
+            button.setTextColor(Color.parseColor("#9e9e9e"));
+        } else {
+            button.setBackgroundResource(R.drawable.botao2);
+            button.setTextColor(Color.parseColor("#f7f6f7"));
+        }
     }
 
     /**
@@ -242,6 +280,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Retorna a tela inicial
         toHome();
+        progressDoalog.hide();
     }
 
     @Override
@@ -269,9 +308,8 @@ public class MainActivity extends AppCompatActivity {
      * Alterna entre as telas
      */
     private void showPage(String page) {
-        LinearLayout ctnServices = (LinearLayout)findViewById(R.id.containerServices);
+        LinearLayout ctnServices = (LinearLayout)findViewById(containerServices);
         LinearLayout ctnType = (LinearLayout)findViewById(R.id.containerTypes);
-        TextView txtDesc = (TextView) findViewById(R.id.txtDesc);
         ctnServices.setVisibility(View.INVISIBLE);
         ctnType.setVisibility(View.INVISIBLE);
 
@@ -282,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "types":
                 ctnType.setVisibility(View.VISIBLE);
-                txtDesc.setText(App.MSG_DESC_TYPE);
+                txtDesc.setText(currentServiceLabel.toUpperCase());
                 break;
         }
     }

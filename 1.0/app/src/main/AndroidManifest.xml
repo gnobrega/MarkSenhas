@@ -20,7 +20,8 @@
             android:name=".MainActivity"
             android:label="@string/app_title"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat" >
+            android:theme="@style/AppTheme"
+            >
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
                 <action android:name="android.intent.action.MAIN" />

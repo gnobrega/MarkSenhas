@@ -6,6 +6,7 @@ import android.os.Environment;
 import android.os.Message;
 import android.text.format.Time;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import org.ini4j.Ini;
@@ -314,15 +315,40 @@ public class Util {
     }
 
     /**
-     * Recupera a url do servidor
+     * Roda em modo fullscreen
      */
-    public static String getServerUrl() {
-        Ini.Section configIni = Util.loadConfig(App.pathFileIni, "queue");
-        if (configIni != null) {
-            return configIni.get("url");
+    public static void setFullscreen(View view) {
+        view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+    }
+
+    /**
+     * Carrega a url do servidor
+     */
+    /**
+     * Recupera a chave do cliente
+     */
+    public static String loadUrlServer() {
+        String path = App.sdcard + "/wikipix.ini";
+        String url = "";
+        if( !new File(path).exists() ) {
+            Util.toast("Arquivo de configuração não encontrado ("+path+")");
         } else {
-            Util.toast("Não foi possível carregar o arquivo INI");
+            try {
+                Ini.Section section = loadConfig(path, "queue");
+                url = section.get("server");
+                if( url == null ) {
+                    throw new Exception("Erro ao recuperar a url do servidor");
+                }
+            } catch (Exception e) {
+                Util.toast("Falha na obtenção da URL do servidor no arquivo .INI");
+                App.MAIN_ACTIVITY.finish();
+            }
         }
-        return null;
+        return url;
     }
 }

@@ -30,21 +30,8 @@ public class App {
     //Recupera a próxima senha
     public static String URL_GET_NEXT = URL_SERVER + "api.php?action=getNext";
 
-    //Estabelecimento
-    public static String unidade = "1";
-
-    //Token
-    public static String URL_TOKEN = URL_SERVER + "/api/token";
-    public static String URL_TOKEN_CHECK = URL_SERVER + "/api/check";
-    public static String ACCESS_GRANT_TYPE = "password";
-    public static String ACCESS_USER = "gnobrega";
-    public static String ACCESS_PASS = "090288";
-    public static String ACCESS_CLIENT_ID = "totem01";
-    public static String ACCESS_CLIENT_SECRET = "090288";
-    public static Boolean TOKEN_VALID = false;
-
     //Mensagens
-    public static String MSG_DESC_SERVICE = "Selecione o serviço";
+    public static String MSG_DESC_SERVICE = "ESCOLHA O SEU ATENDIMENTO";
     public static String MSG_DESC_TYPE = "Selecione tipo de atendimento";
 
     //Permissões
