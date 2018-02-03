@@ -7,6 +7,7 @@ import android.os.Message;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import org.ini4j.Ini;
@@ -324,6 +325,13 @@ public class Util {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
+        //Remove title bar
+        App.MAIN_ACTIVITY.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //App.MAIN_ACTIVITY.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+
     }
 
     /**

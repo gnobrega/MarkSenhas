@@ -45,10 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         App.MAIN_ACTIVITY = this;
         body = (LinearLayout) findViewById(R.id.body);
+        App.BODY = body;
         txtDesc = (TextView) findViewById(R.id.txtDesc);
 
         //Carrega o diálogo de espera
@@ -61,10 +63,6 @@ public class MainActivity extends AppCompatActivity {
         dontSleep();
         context = getApplicationContext();
         txtDesc.setText(App.MSG_DESC_SERVICE);
-
-        //Remove title bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //Carrega os dados do servidor
         App.URL_SERVER = Util.loadUrlServer();
@@ -189,7 +187,8 @@ public class MainActivity extends AppCompatActivity {
                 currentTypeLabel = target.getText().toString();
 
                 //Solicita senha no servidor
-                progressDoalog.show();
+                //progressDoalog.show();
+                Util.toast("Imprimindo...");
                 printPassword();
             }
         };
@@ -280,7 +279,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Retorna a tela inicial
         toHome();
-        progressDoalog.hide();
+        //progressDoalog.hide();
     }
 
     @Override

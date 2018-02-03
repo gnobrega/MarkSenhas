@@ -1,6 +1,7 @@
 package br.com.marktv.marksenhas;
 
 import android.os.Environment;
+import android.widget.LinearLayout;
 
 import java.io.File;
 
@@ -20,6 +21,7 @@ public class App {
 
     //Atividade principal
     public static MainActivity MAIN_ACTIVITY = null;
+    public static LinearLayout BODY;
 
     //Servidor de informações
     public static String URL_SERVER = "http://gestor.wikipix.com.br/subsystem/marktv-senhas/";
