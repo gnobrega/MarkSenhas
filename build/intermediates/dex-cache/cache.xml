@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Gustavo\.gradle\caches\modules-2\files-2.1\org.ini4j\ini4j\0.5.1\8e737d82ecac9ba6100a9bba71e92a381b75efdc\ini4j-0.5.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8e737d82ecac9ba6100a9bba71e92a381b75efdc">
+        <dex dex="C:\xampp\htdocs\android\MarkSenhas\app\build\intermediates\pre-dexed\debug\ini4j-0.5.1_33f8168aadb6304f9555618d513752379a546e90.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\xampp\htdocs\android\MarkSenhas\app\libs\ePOS-Print.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a106cd4d9499677a7db2eec6638f2eae618e250a">
+        <dex dex="C:\xampp\htdocs\android\MarkSenhas\app\build\intermediates\pre-dexed\debug\ePOS-Print_641c8a7a3c72e52cbe2e49a222c6ad04b9854395.jar" />
+    </item>
+
+</items>

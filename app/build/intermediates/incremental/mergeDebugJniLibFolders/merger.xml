@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="C:\xampp\htdocs\android\MarkSenhas\app\src\main\jniLibs"><file name="armeabi/libeposprint.so" path="C:\xampp\htdocs\android\MarkSenhas\app\src\main\jniLibs\armeabi\libeposprint.so"/></source></dataSet><dataSet config="debug"><source path="C:\xampp\htdocs\android\MarkSenhas\app\src\debug\jniLibs"/></dataSet></merger>
