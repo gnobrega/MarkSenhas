@@ -2,8 +2,10 @@ package br.com.marktv.marksenhas;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
 import android.os.Message;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -77,6 +79,28 @@ public class Util {
             }
         }
         return url;
+    }
+
+    /**
+     * Recupera o IP da impressora
+     */
+    public static String getPrinterIp() {
+        String path = App.sdcard + "/wikipix.ini";
+        String ip = "";
+        if( !new File(path).exists() ) {
+            Util.toast("Arquivo de configuração não encontrado ("+path+")");
+        } else {
+            try {
+                Ini.Section section = loadConfig(path, "queue");
+                ip = section.get("printer_ip");
+                if( ip == null ) {
+                    throw new Exception("Erro ao recuperar o ip da impressora");
+                }
+            } catch (Exception e) {
+                Util.toast(e.getMessage());
+            }
+        }
+        return ip;
     }
 
     /**
@@ -230,5 +254,15 @@ public class Util {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static float getSizeResponsive(Activity activity, float ref) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        float factor = width / 800;
+        float newVal = ref * (factor/100);
+        return newVal;
     }
 }

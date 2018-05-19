@@ -37,12 +37,9 @@ public class EPOSPrintSampleActivity extends Activity implements OnClickListener
         }
     }
 
-    /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        App.ePOSPrintSampleActivity = this;
+    public void onResume() {
+        super.onResume();
 
         //Carrega a atividade de senhas
         Intent intent = null;
@@ -52,6 +49,14 @@ public class EPOSPrintSampleActivity extends Activity implements OnClickListener
         intent.putExtra("printername", printerName);
         intent.putExtra("language", language);
         startActivityForResult(intent, 0);
+    }
+
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        App.ePOSPrintSampleActivity = this;
 
         //Registration ClickListener
         int[] target = {

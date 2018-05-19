@@ -4,8 +4,10 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 
-import com.epson.eposprint.*;
-import com.epson.epsonio.*;
+import com.epson.eposprint.EposException;
+import com.epson.eposprint.Print;
+import com.epson.epsonio.EpsonIoException;
+import com.epson.epsonio.IoStatus;
 
 public class ShowMsg {
     
@@ -84,16 +86,27 @@ public class ShowMsg {
         show(msg, context);
     }
     
-    private static void show(String msg, Context context){
+    public static void show(String msg, Context context, String btnLabel){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         alertDialog.setMessage(msg);
-        alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton(btnLabel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,int whichButton) {
                 return ;
             }
         });
         alertDialog.create();
         alertDialog.show();
+    }
+
+    public static void show(String msg, Context context){
+        ShowMsg.show(msg, context, "OK");
+    }
+
+    public static AlertDialog showInfo(String msg, Context context){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+        alertDialogBuilder.setMessage(msg);
+        AlertDialog alertDialog = alertDialogBuilder.show();
+        return alertDialog;
     }
     
     private static String getEposExceptionText(int state){
@@ -150,7 +163,7 @@ public class ShowMsg {
         }
     }
     
-    private static String getEposStatusText(int status){
+    public static String getEposStatusText(int status){
         String result = "";
         
         for(int bit = 0; bit <BITCNT_INT; bit++){

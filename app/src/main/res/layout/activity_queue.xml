@@ -3,45 +3,37 @@
     xmlns:wheel="http://schemas.android.com/tools"
     android:id="@+id/body"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-
-    <!-- Background -->
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/fundo"
-        android:scaleType="fitStart"
-         />
+    android:layout_height="wrap_content"
+    android:background="@drawable/fundo">
 
     <!-- Instruçoes -->
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="false"
         android:layout_centerInParent="false"
-        android:layout_centerVertical="false"
         android:orientation="vertical">
 
         <!-- Tela - Lista de botões de serviços -->
         <TextView
             android:id="@+id/txtDesc"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="150dp"
+            android:layout_marginLeft="100sp"
+            android:layout_marginTop="290sp"
             android:gravity="center"
             android:text="SISTEMA DE GESTÃO DE SENHAS"
             android:textColor="#fff"
-            android:textSize="20dp" />
+            android:textSize="40dip" />
 
         <LinearLayout
             android:id="@+id/containerServices"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="400dp"
             android:gravity="center"
             android:orientation="vertical"></LinearLayout>
 
@@ -50,7 +42,7 @@
             android:id="@+id/containerTypes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="400dp"
             android:gravity="center"
             android:orientation="vertical"
             android:visibility="invisible"></LinearLayout>

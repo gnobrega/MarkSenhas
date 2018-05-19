@@ -39,4 +39,7 @@ public class App {
 
     //Permissões
     public static int PERMISSION_READ_EXTERNAL_STORAGE = 1;
+
+    //Status de impressão
+    public static int PRINT_SUCCESS = 16777222;
 }

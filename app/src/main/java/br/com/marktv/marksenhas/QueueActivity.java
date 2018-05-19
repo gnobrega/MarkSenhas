@@ -1,11 +1,13 @@
 package br.com.marktv.marksenhas;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -16,7 +18,6 @@ import android.widget.TextView;
 
 import com.epson.eposprint.BatteryStatusChangeEventListener;
 import com.epson.eposprint.Builder;
-import com.epson.eposprint.EposException;
 import com.epson.eposprint.Print;
 import com.epson.eposprint.StatusChangeEventListener;
 
@@ -39,6 +40,7 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
 
     static Print printer = null;
     int PRINT_ST_SUCCESS = 16777220;
+    String PRINTER_IP;
     TextView txtDesc;
     private Map<String, Button> buttonsServices;
     public String currentService;
@@ -48,6 +50,7 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
     public String currentTypeLabel;
     public Thread threadPrinter = null;
     public String currentPassword;
+    public ProgressDialog progressDialog = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +64,12 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
         txtDesc = (TextView) findViewById(R.id.txtDesc);
         txtDesc.setText(App.MSG_DESC_SERVICE);
 
+        if( progressDialog == null ) {
+            progressDialog = new ProgressDialog(this);
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progressDialog.setIndeterminate(false);
+        }
+
         persistFullscreen(body);
         dontSleep();
 
@@ -68,6 +77,7 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
         App.URL_SERVER = Util.loadUrlServer();
         URL_SERVICES = App.URL_SERVER + "api.php?action=getServices";
         URL_GET_NEXT = App.URL_SERVER + "api.php?action=getNext";
+        PRINTER_IP = Util.getPrinterIp();
 
         //Inicia a execução
         initialize();
@@ -85,6 +95,13 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
         //Cria os botões
         createButtonsServices();
         createButtonsTypes();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        RelativeLayout body = (RelativeLayout) findViewById(R.id.body);
+        Util.setFullscreen(this, body);
     }
 
     /**
@@ -164,13 +181,12 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
         //Evento click
         View.OnClickListener eventClick = new View.OnClickListener() {
             public void onClick(View v) {
+                Util.log("btnType click()");
                 Button target = (Button) v;
                 currentType = target.getTag().toString();
                 currentTypeLabel = target.getText().toString();
 
                 //Solicita senha no servidor
-                //progressDoalog.show();
-                Util.toast("Imprimindo...");
                 loadDataPrint();
             }
         };
@@ -194,8 +210,8 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
         //Botão Voltar
         Button buttonV = new Button(getApplicationContext());
         buttonV.setBackgroundResource(R.drawable.botao3);
-        LinearLayout.LayoutParams btnParamsV = new LinearLayout.LayoutParams(300, 170);
-        btnParamsV.setMargins(0, 90, 0, 0);
+        LinearLayout.LayoutParams btnParamsV = new LinearLayout.LayoutParams(265, 140);
+        btnParamsV.setMargins(0, 30, 0, 0);
         buttonV.setLayoutParams(btnParamsV);
         buttonV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -210,7 +226,11 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
      * Carrega a próxima senha e envia para a impressora
      */
     private void loadDataPrint  () {
+        Util.log("loadDataPrint()");
         final String url = App.URL_GET_NEXT + "&service=" + currentService + "&type=" +currentType;
+
+        //Exibe a mensagem de espera
+        showWaitMessage("Obtendo nova senha...");
 
         //Recupera a próxima senha da fila
         threadPrinter = new Thread(new Runnable() {
@@ -227,8 +247,20 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
                     currentPassword = jsonData.getString("password");
 
                     //Envia o comando para a impressora
-                    printPassword(currentServiceLabel, currentTypeLabel, currentPassword);
+                    Boolean success = printPassword(currentServiceLabel, currentTypeLabel, currentPassword);
+                    closeWaitMessage();
+                    if( !success ) {
+                        Util.ACTIVITY.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                ShowMsg.show("Falha na impressão", Util.ACTIVITY, "Fechar");
+                            }
+                        });
+
+                    }
                 } catch (JSONException e) {
+                    Util.log(e.getMessage());
+                    closeWaitMessage();
                     e.printStackTrace();
                 }
             }
@@ -253,9 +285,10 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
 
         //Imprime o conteúdo (3 tentativas)
         Boolean success = false;
+        updateWaitMessage("Imprimindo...");
         for( int i = 0; i < 3; i++ ) {
             int n = i + 1;
-            System.out.println("Tentativa " + n);
+            Util.log("Tentativa de impressão nº " + n);
             success = sendToPrinter(currentServiceLabel, currentTypeLabel, currentPassword);
             if( success ) {
                 break;
@@ -346,17 +379,15 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
                 //send builder data
                 int[] status = new int[1];
                 int[] battery = new int[1];
-                try {
-                    printer.sendData(builder, 1000 * 10, status, battery);
+                printer.sendData(builder, 1000 * 10, status, battery);
+                String strStatus = status[0] + ": " + ShowMsg.getEposStatusText(status[0]);
+                Util.log(strStatus);
+                if( status[0] == App.PRINT_SUCCESS ) {
                     rs = true;
-                    //ShowMsg.showStatus(EposException.SUCCESS, status[0], battery[0], this);
-                } catch (EposException e) {
-                    //ShowMsg.showStatus(e.getErrorStatus(), e.getPrinterStatus(), e.getBatteryStatus(), this);
-                    Log.e("ERRO", "Falha durante a impressão");
                 }
             } catch (Exception e) {
-                //ShowMsg.showException(e, method, this);
-                Log.e("ERRO", e.getMessage());
+                Util.log("Exception: "+e.getMessage());
+                e.printStackTrace();
             }
 
             //remove builder
@@ -370,6 +401,7 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
             }
         }
 
+        Util.log("Print return: "+rs);
         return rs;
     }
 
@@ -391,7 +423,7 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
         printer.setStatusChangeEventCallback(this);
         printer.setBatteryStatusChangeEventCallback(this);
         try {
-            printer.openPrinter(Print.DEVTYPE_TCP, "192.168.15.15", Print.FALSE, 1000);
+            printer.openPrinter(Print.DEVTYPE_TCP, PRINTER_IP, Print.FALSE, 1000);
             rs = true;
         } catch (Exception e) {
             //ShowMsg.showException(e, "openPrinter", this);
@@ -444,8 +476,8 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
      */
     private void formatButton(Button button, int theme) {
         final Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/MuseoSans-900.otf");
-        btnParams = new LinearLayout.LayoutParams(700, 200);
-        btnParams.setMargins(0, 0, 0, 40);
+        btnParams = new LinearLayout.LayoutParams(600, 150);
+        btnParams.setMargins(0, 0, 0, 25);
         button.setTextSize(24);
         button.setLayoutParams(btnParams);
         button.setTypeface(typeface);
@@ -482,6 +514,46 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
             ctnType.setVisibility(View.VISIBLE);
             txtDesc.setText(currentServiceLabel.toUpperCase());
         }
+    }
+
+    /**
+     * Exibe a mensagem de espera
+     */
+    public void showWaitMessage(String message) {
+        if( !Util.ACTIVITY.isDestroyed() ) {
+            progressDialog.setMessage(message);
+            progressDialog.show();
+        }
+    }
+
+    /**
+     * Atualiza a mensagem de espera
+     */
+    public void updateWaitMessage(final String message) {
+        if( !Util.ACTIVITY.isDestroyed() && Looper.getMainLooper().getThread() == Thread.currentThread() ) {
+            progressDialog.setMessage(message);
+        } else if ( !Util.ACTIVITY.isDestroyed() ) {
+            Util.ACTIVITY.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    progressDialog.setMessage(message);
+                }
+            });
+        }
+    }
+
+    /**
+     * Fecha a mensagem
+     */
+    public void closeWaitMessage() {
+        progressDialog.dismiss();
+
+        Util.ACTIVITY.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Util.setFullscreen(Util.ACTIVITY, App.BODY);
+            }
+        });
     }
 
     @Override
