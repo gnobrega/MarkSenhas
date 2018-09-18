@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.epson.eposprint.BatteryStatusChangeEventListener;
 import com.epson.eposprint.Builder;
+import com.epson.eposprint.EposException;
 import com.epson.eposprint.Print;
 import com.epson.eposprint.StatusChangeEventListener;
 
@@ -81,6 +82,33 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
 
         //Inicia a execução
         initialize();
+
+        //Monitora a comunicação com a impressora
+        if( !printConnected() ) {
+            openPrinter();
+        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while( Thread.currentThread().isAlive() ) {
+                    if( printer != null ) {
+                        int[] status = new int[1];
+                        int[] batt = new int[1];
+                        try {
+                            printer.getStatus(status, batt);
+                            String txtStatus = ShowMsg.getEposStatusText(status[0]);
+                            Log.e("XXXXXXXX", txtStatus);
+                        } catch (EposException e) {
+                            e.printStackTrace();
+                        }
+
+                    } else {
+                        Log.e("XXXXXXXX", "PRINTER IS NULL");
+                    }
+                    Util.sleep(10000);
+                }
+            }
+        }).start();
     }
 
     /**
@@ -132,36 +160,50 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
                     JSONArray jsonData = jsonResp.getJSONArray("data");
                     if (jsonData.length() > 0) {
 
-                        for (int i = 0; i < jsonData.length(); i++) {
-                            JSONObject service = jsonData.getJSONObject(i);
-                            Integer serviceId = service.getInt("id");
-                            String serviceName = service.getString("name");
-                            String serviceKey = service.getString("key");
+                        if( jsonData.length() > 1 ) {
+                            for (int i = 0; i < jsonData.length(); i++) {
+                                JSONObject service = jsonData.getJSONObject(i);
+                                Integer serviceId = service.getInt("id");
+                                String serviceName = service.getString("name");
+                                String serviceKey = service.getString("key");
 
-                            //Cria os botões
-                            final Button button = new Button(getApplicationContext());
-                            formatButton(button, 1);
-                            button.setText(serviceName);
-                            button.setTag(serviceKey);
-                            buttonsServices.put(serviceKey, button);
-                            runOnUiThread(new Runnable() {
+                                //Cria os botões
+                                final Button button = new Button(getApplicationContext());
+                                formatButton(button, 1);
+                                button.setText(serviceName);
+                                button.setTag(serviceKey);
+                                buttonsServices.put(serviceKey, button);
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public synchronized void run() {
+                                        containerServices.addView(button);
+                                    }
+                                });
+
+                                //Evento de click do botão
+                                button.setOnClickListener(new View.OnClickListener() {
+                                    public void onClick(View v) {
+                                        Button target = (Button) v;
+                                        currentService = target.getTag().toString();
+                                        currentServiceLabel = target.getText().toString();
+                                        showPage("types");
+                                    }
+                                });
+                            }
+                            buttonsServicesCreated[0] = true;
+                        } else {
+
+                            //Possui apenas 1 serviço
+                            JSONObject service = jsonData.getJSONObject(0);
+                            currentService = service.getString("key");
+                            currentServiceLabel = service.getString("name");
+                            Util.ACTIVITY.runOnUiThread(new Runnable() {
                                 @Override
-                                public synchronized void run() {
-                                    containerServices.addView(button);
-                                }
-                            });
-
-                            //Evento de click do botão
-                            button.setOnClickListener(new View.OnClickListener() {
-                                public void onClick(View v) {
-                                    Button target = (Button) v;
-                                    currentService = target.getTag().toString();
-                                    currentServiceLabel = target.getText().toString();
+                                public void run() {
                                     showPage("types");
                                 }
                             });
                         }
-                        buttonsServicesCreated[0] = true;
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -209,6 +251,7 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
 
         //Botão Voltar
         Button buttonV = new Button(getApplicationContext());
+        buttonV.setVisibility(View.INVISIBLE);
         buttonV.setBackgroundResource(R.drawable.botao3);
         LinearLayout.LayoutParams btnParamsV = new LinearLayout.LayoutParams(265, 140);
         btnParamsV.setMargins(0, 30, 0, 0);
@@ -290,6 +333,7 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
             int n = i + 1;
             Util.log("Tentativa de impressão nº " + n);
             success = sendToPrinter(currentServiceLabel, currentTypeLabel, currentPassword);
+
             if( success ) {
                 break;
             } else {
@@ -312,7 +356,7 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
      * Retorna para a tela inicial
      */
     protected void toHome() {
-        showPage("services");
+        showPage("types");
     }
 
     /**

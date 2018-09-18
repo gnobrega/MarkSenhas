@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="ePOS-Print">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/ePOS-Print.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

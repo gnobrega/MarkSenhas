@@ -1,18 +1,18 @@
 [
     {
-        "merged": "C:\\xampp\\htdocs\\android\\MarkSenhas\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
-        "source": "C:\\xampp\\htdocs\\android\\MarkSenhas\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+        "merged": "D:\\Projetos\\Android\\MarkSenhas\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\botao2.png",
+        "source": "D:\\Projetos\\Android\\MarkSenhas\\app\\src\\main\\res\\drawable-hdpi\\botao2.png"
     },
     {
-        "merged": "C:\\xampp\\htdocs\\android\\MarkSenhas\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\botao.png",
-        "source": "C:\\xampp\\htdocs\\android\\MarkSenhas\\app\\src\\main\\res\\drawable-hdpi\\botao.png"
+        "merged": "D:\\Projetos\\Android\\MarkSenhas\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "D:\\Projetos\\Android\\MarkSenhas\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\xampp\\htdocs\\android\\MarkSenhas\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\botao2.png",
-        "source": "C:\\xampp\\htdocs\\android\\MarkSenhas\\app\\src\\main\\res\\drawable-hdpi\\botao2.png"
+        "merged": "D:\\Projetos\\Android\\MarkSenhas\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\botao3.png",
+        "source": "D:\\Projetos\\Android\\MarkSenhas\\app\\src\\main\\res\\drawable-hdpi\\botao3.png"
     },
     {
-        "merged": "C:\\xampp\\htdocs\\android\\MarkSenhas\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\botao3.png",
-        "source": "C:\\xampp\\htdocs\\android\\MarkSenhas\\app\\src\\main\\res\\drawable-hdpi\\botao3.png"
+        "merged": "D:\\Projetos\\Android\\MarkSenhas\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\botao.png",
+        "source": "D:\\Projetos\\Android\\MarkSenhas\\app\\src\\main\\res\\drawable-hdpi\\botao.png"
     }
 ]

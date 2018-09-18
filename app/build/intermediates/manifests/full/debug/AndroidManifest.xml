@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.br.com.marktv.br.com.marktv.marksenhas"
+    package="br.com.marktv.marksenhas"
     android:versionCode="1"
     android:versionName="1.0" >
 

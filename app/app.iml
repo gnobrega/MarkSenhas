@@ -22,7 +22,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6">
     <output url="file://$MODULE_DIR$/build/intermediates/classes/debug" />
     <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/debug" />
     <exclude-output />
@@ -95,8 +95,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="ini4j-0.5.1" level="project" />
-    <orderEntry type="library" exported="" name="ePOS-Print" level="project" />
-    <orderEntry type="library" exported="" name="android-android-19" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: __local_jars__:D.\Projetos\Android\MarkSenhas\app\libs\ePOS-Print.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.ini4j:ini4j:0.5.1@jar" level="project" />
   </component>
 </module>
