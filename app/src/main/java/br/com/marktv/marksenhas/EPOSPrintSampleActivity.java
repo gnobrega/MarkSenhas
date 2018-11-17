@@ -15,7 +15,7 @@ import com.epson.eposprint.StatusChangeEventListener;
 public class EPOSPrintSampleActivity extends Activity implements OnClickListener, StatusChangeEventListener, BatteryStatusChangeEventListener {
 
     static Print printer = null;
-    String openDeviceName = "192.168.192.168";
+    String openDeviceName = "192.168.15.125";
     int connectionType = Print.DEVTYPE_TCP;
     int language = com.epson.eposprint.Builder.LANG_EN;
     String printerName = "TM-T88V";

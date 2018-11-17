@@ -8,6 +8,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.PowerManager;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -84,7 +85,7 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
         initialize();
 
         //Monitora a comunicação com a impressora
-        if( !printConnected() ) {
+        /*if( !printConnected() ) {
             openPrinter();
         }
         new Thread(new Runnable() {
@@ -93,22 +94,24 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
                 while( Thread.currentThread().isAlive() ) {
                     if( printer != null ) {
                         int[] status = new int[1];
-                        int[] batt = new int[1];
+                        int[] battery = new int[1];
                         try {
-                            printer.getStatus(status, batt);
+                            printer.getStatus(status, battery);
                             String txtStatus = ShowMsg.getEposStatusText(status[0]);
-                            Log.e("XXXXXXXX", txtStatus);
+                            String msgStatus = "Status: " + txtStatus + "\nBattery: " + battery[0];
+                            Util.log(msgStatus);
+                            //Util.toastMainThread(Util.ACTIVITY, msgStatus);
                         } catch (EposException e) {
                             e.printStackTrace();
                         }
 
                     } else {
-                        Log.e("XXXXXXXX", "PRINTER IS NULL");
+                        Util.log("PRINTER IS NULL");
                     }
                     Util.sleep(10000);
                 }
             }
-        }).start();
+        }).start();*/
     }
 
     /**
@@ -326,28 +329,10 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
             currentPassword = "0" + currentPassword;
         }
 
-        //Imprime o conteúdo (3 tentativas)
+        //Imprime o conteúdo
         Boolean success = false;
         updateWaitMessage("Imprimindo...");
-        for( int i = 0; i < 3; i++ ) {
-            int n = i + 1;
-            Util.log("Tentativa de impressão nº " + n);
-            success = sendToPrinter(currentServiceLabel, currentTypeLabel, currentPassword);
-
-            if( success ) {
-                break;
-            } else {
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            if( i >= 2 ) {
-                Log.e("ERRO", "Falha na impressão");
-            }
-        }
+        success = sendToPrinter(currentServiceLabel, currentTypeLabel, currentPassword);
 
         return success;
     }
@@ -423,11 +408,30 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
                 //send builder data
                 int[] status = new int[1];
                 int[] battery = new int[1];
-                printer.sendData(builder, 1000 * 10, status, battery);
-                String strStatus = status[0] + ": " + ShowMsg.getEposStatusText(status[0]);
-                Util.log(strStatus);
-                if( status[0] == App.PRINT_SUCCESS ) {
-                    rs = true;
+
+                //Executa a impressão (3 tentativas)
+                boolean success = false;
+                for( int i = 0; i < 3; i++ ) {
+                    int n = i + 1;
+                    Util.log("Tentativa de impressão nº " + n);
+
+                    printer.sendData(builder, 1000 * 10, status, battery);
+                    String strStatus = status[0] + ": " + ShowMsg.getEposStatusText(status[0]);
+                    Util.log(strStatus);
+                    if( status[0] == App.PRINT_SUCCESS ) {
+                        rs = true;
+                        break;
+                    }
+
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    if( i >= 2 ) {
+                        Log.e("ERRO", "Falha na impressão");
+                    }
                 }
             } catch (Exception e) {
                 Util.log("Exception: "+e.getMessage());
@@ -446,6 +450,16 @@ public class QueueActivity extends Activity implements StatusChangeEventListener
         }
 
         Util.log("Print return: "+rs);
+
+        //Encerra a comunicação
+        if( printer != null ) {
+            try {
+                printer.closePrinter();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         return rs;
     }
 

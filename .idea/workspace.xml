@@ -5,11 +5,8 @@
       <config />
     </shared>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="33809726-7da2-4e3e-931e-7d4c30aafb17" name="Default" comment="" />
+    <list default="true" id="9b1c6e21-027f-4ce5-8d6c-57ef5ba8c0b7" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,80 +19,60 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="QueueActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/QueueActivity.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="98" column="68" lean-forward="false" selection-start-line="98" selection-start-column="68" selection-end-line="98" selection-end-column="68" />
-              <folding>
-                <element signature="e#2963#3793#0" expanded="true" />
-                <element signature="e#3792#3793#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowMsg.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/ShowMsg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="179" column="39" lean-forward="false" selection-start-line="179" selection-start-column="33" selection-end-line="179" selection-end-column="39" />
+            <state relative-caret-position="187">
+              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Print.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/app/libs/ePOS-Print.jar!/com/epson/eposprint/Print.class">
+      <file leaf-file-name="QueueActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/QueueActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="139" column="16" lean-forward="false" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
+            <state relative-caret-position="425">
+              <caret line="413" column="0" lean-forward="false" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
               <folding>
-                <marker date="1524615205930" expanded="false" signature="3:117" ph="/.../" />
-                <marker date="1524615205930" expanded="true" signature="4518:4541" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="4598:4621" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="4679:4702" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="4761:4784" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="4842:4865" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="4925:4948" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5006:5029" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5092:5115" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5174:5197" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5260:5283" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5344:5367" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5428:5451" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5511:5534" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5617:5640" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5661:5684" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5736:5759" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5818:5841" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="5957:5980" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="6123:6146" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="6302:6325" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="6399:6422" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="6500:6523" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="6599:6622" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="6754:6777" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="6924:6947" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="7045:7068" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="7188:7211" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="7313:7336" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="7441:7464" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="7572:7595" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="7700:7723" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="7834:7857" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="7962:7985" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="8105:8128" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="8236:8259" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="8379:8402" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="8516:8539" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="8653:8676" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="8787:8810" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="8951:8974" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="9038:9061" ph="{}" />
-                <marker date="1524615205930" expanded="true" signature="9124:9147" ph="{}" />
+                <element signature="e#12744#12745#0" expanded="true" />
+                <element signature="e#12777#12778#0" expanded="true" />
+                <element signature="e#21383#21384#0" expanded="true" />
+                <element signature="e#21420#21421#0" expanded="true" />
+                <element signature="e#21490#21491#0" expanded="true" />
+                <element signature="e#21527#21528#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/TextActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2958">
+              <caret line="193" column="64" lean-forward="false" selection-start-line="193" selection-start-column="58" selection-end-line="193" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/Util.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1836">
+              <caret line="135" column="22" lean-forward="false" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
+              <folding>
+                <element signature="e#4100#4101#0" expanded="true" />
+                <element signature="e#4139#4140#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,15 +80,35 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sendToPrinter</find>
-      <find>printer</find>
-      <find>PRINTER</find>
+      <find>Queue</find>
+      <find>new Prin</find>
+      <find>showPrinterStatus</find>
+      <find>setPrinter</find>
+      <find>status =</find>
+      <find>toast</find>
+      <find>acti</find>
+      <find>setRes</find>
+      <find>new Print</find>
+      <find>conne</find>
       <find>openPrinter</find>
-      <find>UI</find>
-      <find>show</find>
-      <find>status</find>
+      <find>open</find>
+      <find>Impri</find>
+      <find>xxx</find>
+      <find>Imprimindo</find>
+      <find>servi</find>
+      <find>serviço</find>
+      <find>URL_SERVICES</find>
+      <find>sendData</find>
+      <find>sendToPrinter</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1806,6 +1803,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/EPOSPrintSampleActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/DeviceAdminSample.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/QueueActivity.java" />
       </list>
     </option>
@@ -1831,40 +1831,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="MarkSenhas" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="MarkSenhas" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="MarkSenhas" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="marksenhas" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="sync.plugin.last.upgrade.timestamp" value="1537037201340" />
-    <property name="device.picker.selection" value="3100f28910179400" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MarkPlayer" />
+    <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.2.0" />
+    <property name="device.picker.selection" value="10.0.0.69:5555" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2022,46 +2011,56 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="33809726-7da2-4e3e-931e-7d4c30aafb17" name="Default" comment="" />
-      <created>1537037154157</created>
+      <changelist id="9b1c6e21-027f-4ce5-8d6c-57ef5ba8c0b7" name="Default" comment="" />
+      <created>1538225269819</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1537037154157</updated>
+      <updated>1538225269819</updated>
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1380" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33996683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39966834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5240464" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2069,79 +2068,276 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/QueueActivity.java</url>
+          <line>413</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/app/libs/ePOS-Print.jar!/com/epson/eposprint/Print.class">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="139" column="16" lean-forward="false" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
+        <state relative-caret-position="187">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/TextActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2958">
+          <caret line="193" column="64" lean-forward="false" selection-start-line="193" selection-start-column="58" selection-end-line="193" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="135" column="22" lean-forward="false" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
           <folding>
-            <marker date="1524615205930" expanded="false" signature="3:117" ph="/.../" />
-            <marker date="1524615205930" expanded="true" signature="4518:4541" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="4598:4621" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="4679:4702" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="4761:4784" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="4842:4865" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="4925:4948" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5006:5029" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5092:5115" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5174:5197" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5260:5283" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5344:5367" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5428:5451" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5511:5534" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5617:5640" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5661:5684" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5736:5759" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5818:5841" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="5957:5980" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="6123:6146" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="6302:6325" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="6399:6422" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="6500:6523" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="6599:6622" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="6754:6777" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="6924:6947" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="7045:7068" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="7188:7211" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="7313:7336" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="7441:7464" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="7572:7595" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="7700:7723" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="7834:7857" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="7962:7985" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="8105:8128" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="8236:8259" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="8379:8402" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="8516:8539" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="8653:8676" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="8787:8810" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="8951:8974" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="9038:9061" ph="{}" />
-            <marker date="1524615205930" expanded="true" signature="9124:9147" ph="{}" />
+            <element signature="e#4100#4101#0" expanded="true" />
+            <element signature="e#4139#4140#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/QueueActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="98" column="68" lean-forward="false" selection-start-line="98" selection-start-column="68" selection-end-line="98" selection-end-column="68" />
+        <state relative-caret-position="6358">
+          <caret line="413" column="0" lean-forward="false" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
           <folding>
-            <element signature="e#2963#3793#0" expanded="true" />
-            <element signature="e#3792#3793#0" expanded="true" />
+            <element signature="e#12744#12745#0" expanded="true" />
+            <element signature="e#12777#12778#0" expanded="true" />
+            <element signature="e#21383#21384#0" expanded="true" />
+            <element signature="e#21420#21421#0" expanded="true" />
+            <element signature="e#21490#21491#0" expanded="true" />
+            <element signature="e#21527#21528#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/EPOSPrintSampleActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="50" column="18" lean-forward="true" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/libs/ePOS-Print.jar!/com/epson/eposprint/Print.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5984">
+          <caret line="362" column="28" lean-forward="false" selection-start-line="362" selection-start-column="17" selection-end-line="362" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3587">
+          <caret line="241" column="38" lean-forward="false" selection-start-line="241" selection-start-column="23" selection-end-line="241" selection-end-column="38" />
+          <folding>
+            <element signature="e#4100#4101#0" expanded="true" />
+            <element signature="e#4139#4140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/OpenActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3009">
+          <caret line="192" column="14" lean-forward="false" selection-start-line="192" selection-start-column="8" selection-end-line="192" selection-end-column="14" />
+          <folding>
+            <element signature="e#4093#4094#0" expanded="false" />
+            <element signature="e#4122#4123#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/QueueActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6902">
+          <caret line="447" column="13" lean-forward="true" selection-start-line="447" selection-start-column="13" selection-end-line="447" selection-end-column="13" />
+          <folding>
+            <element signature="e#12744#12745#0" expanded="true" />
+            <element signature="e#12777#12778#0" expanded="true" />
+            <element signature="e#21383#21384#0" expanded="true" />
+            <element signature="e#21420#21421#0" expanded="true" />
+            <element signature="e#21490#21491#0" expanded="true" />
+            <element signature="e#21527#21528#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="52" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/EPOSPrintSampleActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/libs/ePOS-Print.jar!/com/epson/eposprint/Print.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5984">
+          <caret line="362" column="28" lean-forward="false" selection-start-line="362" selection-start-column="17" selection-end-line="362" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/OpenActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3009">
+          <caret line="192" column="14" lean-forward="false" selection-start-line="192" selection-start-column="8" selection-end-line="192" selection-end-column="14" />
+          <folding>
+            <element signature="e#4093#4094#0" expanded="false" />
+            <element signature="e#4122#4123#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/QueueActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="59" column="48" lean-forward="false" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
+          <folding>
+            <element signature="e#12744#12745#0" expanded="true" />
+            <element signature="e#12777#12778#0" expanded="true" />
+            <element signature="e#21383#21384#0" expanded="true" />
+            <element signature="e#21420#21421#0" expanded="true" />
+            <element signature="e#21490#21491#0" expanded="true" />
+            <element signature="e#21527#21528#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3587">
+          <caret line="241" column="38" lean-forward="false" selection-start-line="241" selection-start-column="23" selection-end-line="241" selection-end-column="38" />
+          <folding>
+            <element signature="e#4100#4101#0" expanded="true" />
+            <element signature="e#4139#4140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-19/android.jar!/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="328" column="25" lean-forward="false" selection-start-line="328" selection-start-column="25" selection-end-line="328" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/ShowMsg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="179" column="39" lean-forward="false" selection-start-line="179" selection-start-column="33" selection-end-line="179" selection-end-column="39" />
+        <state relative-caret-position="118">
+          <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-19/android.jar!/android/os/PowerManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/DeviceAdminSample.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="76" column="51" lean-forward="true" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/EPOSPrintSampleActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="50" column="18" lean-forward="false" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/libs/ePOS-Print.jar!/com/epson/eposprint/Print.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="362" column="28" lean-forward="false" selection-start-line="362" selection-start-column="17" selection-end-line="362" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/OpenActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2571">
+          <caret line="178" column="12" lean-forward="false" selection-start-line="178" selection-start-column="12" selection-end-line="178" selection-end-column="12" />
+          <folding>
+            <element signature="e#4093#4094#0" expanded="false" />
+            <element signature="e#4122#4123#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1836">
+          <caret line="135" column="22" lean-forward="false" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
+          <folding>
+            <element signature="e#4100#4101#0" expanded="true" />
+            <element signature="e#4139#4140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/TextActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2958">
+          <caret line="193" column="64" lean-forward="false" selection-start-line="193" selection-start-column="58" selection-end-line="193" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/com/marktv/marksenhas/QueueActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="413" column="0" lean-forward="false" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
+          <folding>
+            <element signature="e#12744#12745#0" expanded="true" />
+            <element signature="e#12777#12778#0" expanded="true" />
+            <element signature="e#21383#21384#0" expanded="true" />
+            <element signature="e#21420#21421#0" expanded="true" />
+            <element signature="e#21490#21491#0" expanded="true" />
+            <element signature="e#21527#21528#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
